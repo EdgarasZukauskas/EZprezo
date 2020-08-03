@@ -1,0 +1,610 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Raleway';
+  height: 100%;
+  margin: 0;
+  cursor:default;
+  background-color: rgb(117,74,37);
+}
+
+.menu {
+  background-color: rgb(51,28,8);
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  max-width: 230px;
+}
+
+.logo {
+  max-width: 200px;
+  margin: 25px 15px 50px 15px;
+}
+
+.menuItem {
+  color: rgb(245,245,245);
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0px 15px 20px 15px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.menuItemActive{
+  color: rgb(155,155,155);
+}
+
+.socialItem {
+  position: fixed;
+  bottom: 20px;
+  width: 230px;
+  text-align: center;
+}
+
+.socialIconMenu {
+  margin: 30px 5px 0px 5px;
+  width: 40px;
+  filter: invert(80%);
+}
+
+.socialIconMenu:hover {
+  filter: invert(100%);
+}
+
+.page {
+  margin-left: 230px;
+  height: 100%;
+}
+
+.aboutUs {
+  height: 100%;
+  background-image: url('images/main.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.logoImg{
+  display: none;
+}
+
+.aboutUsText {
+  background-color: rgba(140,70,20, 0.6);
+  padding: 15px 30px 15px 30px;
+  color: white;
+  line-height: 1.8;
+  position: absolute;
+  top: 70%;
+  font-size: 40px;
+  width: 45%;
+  left: 20%;
+  display: none;
+  font-weight: 600;
+}
+
+.assortment {
+  text-align: center;
+  padding: 0px 0px 25px 0px;
+}
+
+.assortmentPhoto {
+  width: 100%;
+}
+
+.column {
+  float: left;
+  width: 33%;
+  padding: 5px;
+  position: relative;
+}
+
+.column img {
+  display: block;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.formSubmitError{
+  line-height: 1.5;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(140,70,20, 0.8);
+}
+
+.column:hover .overlay {
+  opacity: 1;
+}
+
+.imageText {
+  width: 90%;
+  color: white;
+  font-size: 17px;
+  line-height: 1.5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.photoAppear{
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.showMore {
+  background-color: rgb(51,28,8);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  border-radius: 3px;
+  margin: 10px auto;
+}
+
+.showMore:hover {
+  background-color: rgb(51,28,8);
+}
+
+.whereToFind {
+  height: 100%;
+}
+
+.addresses {
+  margin: 0px 20px 0px 20px;
+  width: 35%;
+  height: 90%;
+  float: left;
+}
+
+.map {
+  height: 100%;
+  width: 60%;
+  float: right;
+}
+
+.googleMap {
+  width:100%;
+  height:100%;
+}
+
+.cityName {
+  color: white;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.city {
+  color: white;
+  font-size: 20px;
+  text-transform: capitalize;
+  line-height: 2;
+  padding-left: 10px;
+}
+
+.dropdownCitiesBtn {
+  background-color: rgb(51,28,8);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 3px;
+  font-family: 'Raleway';
+}
+
+.dropdownCities {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.cities {
+  display: none;
+  position: absolute;
+  background-color: rgb(107,64,27);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgb(51,28,8);
+  z-index: 1;
+  width: 100%;
+  cursor: pointer;
+}
+
+.cities a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.cities div:hover {background-color: rgb(169,99,49)}
+
+.dropdownCities:hover .cities {
+  display: block;
+}
+
+.dropdownCities:hover .dropdownCitiesBtn {
+  background-color: rgb(51,28,8);
+}
+
+.store {
+  padding: 20px 0px 10px 0px;
+  color: rgb(245,245,245);
+  line-height: 1.5;
+  border-bottom: solid rgb(51,28,8,0.3);
+  display: table;
+  width: 100%;
+}
+
+.storeList {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.contacts {
+  width:100%;
+  height: 100%;
+  padding: 50px 0px 50px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(107,64,27);
+}
+
+.contactForm {
+  width: 48%;
+  float: left;
+  text-align: center;
+  margin-top: 50px;
+  color: rgb(245,245,245);
+  font-size:20px;
+}
+
+.contactDetails {
+  width: 48%;
+  float: right;
+  color: rgb(245,245,245);
+  margin: 50px 15px 50px 15px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.formInput {
+  background-color: inherit;
+  border: 2px solid rgb(51,28,8,0.5);
+  border-radius: 3px;
+  color: rgb(245,245,245);
+  font-size: 20px;
+  line-height: 1.5;
+  width: 80%;
+  margin-top: 20px;
+  padding: 5px 5px 5px 5px;
+}
+
+.formInput::placeholder {
+  color: rgb(245,245,245,0.5);
+  font-family: 'Raleway';
+}
+
+.formSubmit {
+  background-color: rgb(51,28,8);
+  width: 20%;
+  min-width: 150px;
+  text-align: center;
+  color: rgb(245,245,245);
+  padding: 5px 20px 5px 20px;
+  border: 1px solid rgb(51,28,8);
+  border-radius: 3px;
+  margin: 30px auto 30px auto;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.formSubmit:hover {
+  background-color: rgb(51,28,8);
+}
+
+.socialIconContacts {
+  margin: 30px 15px 0px 15px;
+  width: 60px;
+  filter: invert(70%);
+  text-align: center;
+}
+
+.socialIconContacts:hover {
+  filter: invert(90%);
+}
+
+.contactInfoEmail {
+  font-size: 30px;
+}
+
+.contactEmails {
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+textarea {
+  resize: none;
+}
+
+a {
+  text-decoration: none;
+  color:inherit;
+}
+
+@media (min-width:910px) and (max-width:1190px){
+  .showMore {
+    font-size: 14px;
+  }
+
+  .addresses {
+    width: 34%;
+  }
+
+  .imageText{
+    font-size: 10px;
+  }
+}
+
+@media (min-width:700px) and (max-width:909px){
+  .menu {
+    max-width: 190px;
+  }
+
+  .logo {
+    max-width: 160px;
+  }
+
+  .page {
+    margin-left: 190px;
+  }
+
+  .showMore {
+    font-size: 10px;
+  }
+
+  .socialItem {
+    width: 190px;
+  }
+
+  .addresses {
+    width: 35%;
+  }
+
+  .map {
+    width: 55%;
+  }
+
+  .contacts {
+    height: auto;
+  }
+
+  .imageText{
+    font-size: 10px;
+  }
+}
+
+@media (min-width:400px) and (max-width:1190px){
+
+  .menu {
+    display: none;
+  }
+
+  .page{
+    margin-left: 0px;
+  }
+
+  .aboutUs {
+    height: 30%;
+    text-align: center;
+    min-height: 250px;
+  }
+
+  .column {
+    float: left;
+    width: 50%;
+  }
+
+  .showMore {
+    min-width: 200px;
+  }
+
+  .imageText {
+    font-size:10px;
+  }
+
+  .whereToFind{
+    height: auto;
+  }
+
+  .addresses{
+    width: unset;
+    float: unset;
+  }
+
+  .storeList {
+    overflow-y: none;
+    height: unset;
+  }
+
+  .map {
+    height: 400px;
+    width: 100%;
+    float: unset;
+  }
+
+  .dropdownCitiesBtn {
+    margin-top: 20px;
+  }
+
+  .contacts {
+    height: auto;
+    display: inline-block;
+    justify-content: unset;
+    align-items: unset;
+  }
+
+  .contactForm {
+    width: unset;
+    float: unset;
+    margin-top: 0px;
+  }
+
+  .contactDetails {
+    width: unset;
+    float: unset;
+  }
+
+  .logoImg{
+    display: unset;
+    max-height: 150px;
+    text-align: center;
+    margin-top: 50px;
+    padding: 10px 10px 10px 10px;
+    background-size: cover;
+    background-position-x: center;
+    box-shadow: 0 3000px rgba(0, 0, 0, 0.7) inset;
+  }
+}
+
+@media (min-width:200px) and (max-width:399px){
+  .menu {
+    display: none;
+  }
+
+  .page{
+    margin-left: 0px;
+  }
+
+  .aboutUs {
+    height: 30%;
+    text-align: center;
+    min-height: 250px;
+  }
+
+  .column {
+    float: left;
+    width: 50%;
+  }
+
+  .showMore {
+    min-width: 200px;
+  }
+
+  .imageText {
+    font-size:7px;
+  }
+
+  .whereToFind{
+    height: auto;
+  }
+
+  .addresses{
+    width: unset;
+    float: unset;
+  }
+
+  .storeList {
+    overflow-y: none;
+    height: unset;
+  }
+
+  .map {
+    height: 400px;
+    width: 100%;
+    float: unset;
+  }
+
+  .dropdownCitiesBtn {
+    margin-top: 20px;
+  }
+
+  .contacts {
+    height: auto;
+    display: inline-block;
+    justify-content: unset;
+    align-items: unset;
+  }
+
+  .contactForm {
+    float: unset;
+    margin-top: 0px;
+  }
+
+  .contactDetails {
+    width: unset;
+    float: unset;
+  }
+
+  .logoImg{
+    display: unset;
+    max-height: 150px;
+    text-align: center;
+    margin-top: 50px;
+    padding: 10px 10px 10px 10px;
+    background-size: cover;
+    background-position-x: center;
+    box-shadow: 0 3000px rgba(0, 0, 0, 0.7) inset;
+  }
+
+}
+
+@media (max-height:430px){
+  .socialItem {
+    display: none;
+  }
+}
